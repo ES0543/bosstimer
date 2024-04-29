@@ -19,32 +19,54 @@
 
 .note {
     position: absolute;
-    bottom: -20px;
-    left: 15px;
-    font-size: 12px;
+    bottom: -16px;
+    left: -20px;
+    font-size: 15px;
     color: black;
+    font-weight: bold; /* Yazıyı kalınlaştırma */
     white-space: nowrap;
     pointer-events: none; /* Not tıklanabilir olmasın */
+    margin-left: 10px; /* Yeni margin-left eklendi */
 }
 
 #info-panel {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 60px;
+    left: 850px; /* Yeni left değeri */
+    padding: 10px; /* Yeni padding eklendi */
+}
+
+#message {
+    margin-top: 10px; /* Point düğmesinden sonra boşluk bırakır */
+    width: calc(100% - 5px); /* panelin içindeki genişlik */
+}
+
+button {
+    display: block; /* Point düğmesi ve diğer düğmeleri alt alta göster */
+    margin-top: 10px; /* Her düğme arasında boşluk bırakır */
+    margin-bottom: 10px; /* Düğmelerin alt kısmına boşluk bırakır */
 }
 
 #sidebar {
     position: absolute;
-    top: 20px;
-    left: 830px; /* Harita genişliği + aralık */
+    top: 250px; /* Boss & Timer yazısından sonra yer alır */
+    left: 850px; /* Yeni left değeri */
     width: 250px; /* Sidebar genişliği */
     padding: 10px;
+    margin-left: 10px; /* Yeni margin-left eklendi */
     border: 1px solid #ccc;
 }
 
 #sidebar h2 {
     margin-top: 0;
 }
+
 .highlight {
     outline: 2px solid blue;
+}
+
+/* Dark mode stilleri */
+body {
+    background-color: #121212; /* Karanlık arka plan rengi */
+    color: #FFFFFF; /* Beyaz metin rengi */
 }
