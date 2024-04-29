@@ -47,7 +47,7 @@ function addMarker(event) {
     });
 
     var removeButton = document.createElement('button');
-    removeButton.innerText = 'Kaldır';
+    removeButton.innerText = 'Remove';
     removeButton.addEventListener('click', function() {
         dot.remove();
         markerItem.remove();
