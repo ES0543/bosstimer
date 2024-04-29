@@ -1,9 +1,8 @@
-/* Harita stilleri */
 #map {
     position: relative;
     width: 800px;
     height: 800px;
-    background-image: url('https://i.ibb.co/3r7L1LT/Screenshot-3.png'); /* Harita görüntüsünün URL'si */
+    background-image: url('https://i.ibb.co/3r7L1LT/Screenshot-3.png');
     background-size: cover;
     border: 1px solid black;
 }
@@ -12,9 +11,9 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: red; /* Nokta rengi */
-    border-radius: 50%; /* Yuvarlak şekil */
-    pointer-events: none; /* Nokta tıklanabilir olmasın */
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .note {
@@ -23,39 +22,37 @@
     left: -20px;
     font-size: 15px;
     color: black;
-    font-weight: bold; /* Yazıyı kalınlaştırma */
+    font-weight: bold;
     white-space: nowrap;
-    pointer-events: none; /* Not tıklanabilir olmasın */
-    margin-left: 10px; /* Yeni margin-left eklendi */
+    pointer-events: none;
+    margin-left: 10px;
 }
 
-/* Panel stilleri */
 #info-panel {
     position: absolute;
-    top: 60px; /* Yeni değer */
-    left: 850px; /* Yeni değer */
-    padding: 10px; /* Yeni padding eklendi */
+    top: 60px;
+    left: 850px;
+    padding: 10px;
 }
 
 #message {
-    margin-top: 10px; /* Point düğmesinden sonra boşluk bırakır */
-    width: calc(100% - 5px); /* panelin içindeki genişlik */
+    margin-top: 10px;
+    width: calc(100% - 5px);
 }
 
 button {
-    display: block; /* Point düğmesi ve diğer düğmeleri alt alta göster */
-    margin-top: 10px; /* Her düğme arasında boşluk bırakır */
-    margin-bottom: 10px; /* Düğmelerin alt kısmına boşluk bırakır */
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-/* Sidebar stilleri */
 #sidebar {
     position: absolute;
-    top: 250px; /* Yeni değer */
-    left: 850px; /* Yeni değer */
-    width: 250px; /* Sidebar genişliği */
+    top: 250px;
+    left: 850px;
+    width: 250px;
     padding: 10px;
-    margin-left: 10px; /* Yeni margin-left eklendi */
+    margin-left: 10px;
     border: 1px solid #ccc;
 }
 
@@ -67,8 +64,7 @@ button {
     outline: 2px solid blue;
 }
 
-/* Karanlık moda özgü stiller */
 body {
-    background-color: #121212; /* Karanlık arka plan rengi */
-    color: #FFFFFF; /* Beyaz metin rengi */
+    background-color: #121212;
+    color: #FFFFFF;
 }
