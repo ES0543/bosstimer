@@ -114,5 +114,34 @@ function addMarker(event) {
         console.error("Error adding marker: ", error);
     });
 }
+// Firestore'dan verileri al
+db.collection("markers").get()
+.then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // Her belge için verileri al
+        var markerData = doc.data();
+
+        // İşaret oluştur
+        var dot = document.createElement('div');
+        dot.className = 'dot';
+
+        // İşareti haritaya ekle
+        var map = document.getElementById('map');
+        map.appendChild(dot);
+
+        // İşaretin konumunu ayarla (örneğin, verilerden alınan x ve y koordinatlarına göre)
+        dot.style.left = markerData.x + 'px';
+        dot.style.top = markerData.y + 'px';
+
+        // İşarete not ekle (örneğin, verilerden alınan mesajı)
+        var note = document.createElement('div');
+        note.className = 'note';
+        note.innerHTML = markerData.message;
+        dot.appendChild(note);
+    });
+})
+.catch(function(error) {
+    console.log("Error getting documents: ", error);
+});
 
 
