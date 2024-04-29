@@ -1,4 +1,4 @@
-/* Harita stilini buraya ekleyin */
+/* Harita stilleri */
 #map {
     position: relative;
     width: 800px;
@@ -29,10 +29,11 @@
     margin-left: 10px; /* Yeni margin-left eklendi */
 }
 
+/* Panel stilleri */
 #info-panel {
     position: absolute;
-    top: 60px;
-    left: 850px; /* Yeni left değeri */
+    top: 60px; /* Yeni değer */
+    left: 850px; /* Yeni değer */
     padding: 10px; /* Yeni padding eklendi */
 }
 
@@ -47,10 +48,11 @@ button {
     margin-bottom: 10px; /* Düğmelerin alt kısmına boşluk bırakır */
 }
 
+/* Sidebar stilleri */
 #sidebar {
     position: absolute;
-    top: 250px; /* Boss & Timer yazısından sonra yer alır */
-    left: 850px; /* Yeni left değeri */
+    top: 250px; /* Yeni değer */
+    left: 850px; /* Yeni değer */
     width: 250px; /* Sidebar genişliği */
     padding: 10px;
     margin-left: 10px; /* Yeni margin-left eklendi */
@@ -65,7 +67,7 @@ button {
     outline: 2px solid blue;
 }
 
-/* Dark mode stilleri */
+/* Karanlık moda özgü stiller */
 body {
     background-color: #121212; /* Karanlık arka plan rengi */
     color: #FFFFFF; /* Beyaz metin rengi */
