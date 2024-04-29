@@ -45,10 +45,22 @@ function addMarker(event) {
         }
     }, 1000);
 
-    // Noktaya tıklandığında notu gösterme
+    // Noktaya tıklandığında notu gösterme ve silme
     dot.addEventListener('click', function() {
         alert(message);
+        dot.remove(); // İşaretçiyi silme
+        markerItem.remove(); // Açıklama ve zamanlayıcıyı kaldırma
     });
+
+    // "Kaldır" butonu ekleme
+    var removeButton = document.createElement('button');
+    removeButton.innerText = 'Remove';
+    removeButton.addEventListener('click', function() {
+        dot.remove(); // İşaretçiyi silme
+        markerItem.remove(); // Açıklama ve zamanlayıcıyı kaldırma
+        clearInterval(timerInterval); // Zamanlayıcıyı durdurma
+    });
+    markerItem.appendChild(removeButton);
 
     // Açıklama kısmına mouse ile gelindiğinde sarı kare oluştur
     markerItem.addEventListener('mouseover', function() {
