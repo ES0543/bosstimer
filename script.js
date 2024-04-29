@@ -98,4 +98,21 @@ function formatTime(seconds) {
 
 document.getElementById('map').addEventListener('click', addMarker);
 
+function addMarker(event) {
+    // Kullanıcının eklediği işaretleme bilgisini alın
+    var message = document.getElementById('message').value;
+
+    // Firestore'da yeni bir belge oluşturun ve işaretleme bilgilerini ekleyin
+    db.collection("markers").add({
+        message: message,
+        // Diğer gerekli bilgileri ekleyebilirsiniz
+    })
+    .then(function(docRef) {
+        console.log("Marker added with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding marker: ", error);
+    });
+}
+
 
