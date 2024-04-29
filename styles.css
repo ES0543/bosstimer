@@ -1,0 +1,50 @@
+/* Harita stilini buraya ekleyin */
+#map {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    background-image: url('https://i.ibb.co/3r7L1LT/Screenshot-3.png'); /* Harita görüntüsünün URL'si */
+    background-size: cover;
+    border: 1px solid black;
+}
+
+.dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red; /* Nokta rengi */
+    border-radius: 50%; /* Yuvarlak şekil */
+    pointer-events: none; /* Nokta tıklanabilir olmasın */
+}
+
+.note {
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+    font-size: 12px;
+    color: black;
+    white-space: nowrap;
+    pointer-events: none; /* Not tıklanabilir olmasın */
+}
+
+#info-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#sidebar {
+    position: absolute;
+    top: 20px;
+    left: 830px; /* Harita genişliği + aralık */
+    width: 250px; /* Sidebar genişliği */
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+}
+.highlight {
+    outline: 2px solid blue;
+}
