@@ -1,34 +1,45 @@
-// İşaretçi ekleme işlevi
-function addMarker(event) {
+document.getElementById('map').addEventListener('click', function(event) {
+    const timerDuration = prompt("Kaç saatten geri sayacağını giriniz:");
+
+    if (timerDuration !== null) {
+        const clickTime = new Date();
+        const hours = clickTime.getHours().toString().padStart(2, '0');
+        const minutes = clickTime.getMinutes().toString().padStart(2, '0');
+        const seconds = clickTime.getSeconds().toString().padStart(2, '0');
+        const formattedTime = `${hours}:${minutes}:${seconds}`;
+        
+        const timerEnd = new Date(clickTime.getTime() + timerDuration * 60 * 60 * 1000);
+
+        addMarker(event, timerEnd, formattedTime);
+    }
+});
+
+function addMarker(event, endTime, clickTime) {
     var message = document.getElementById('message').value;
     var dot = document.createElement('div');
     dot.className = 'dot';
 
-    // İşaretçi pozisyonunu hesaplama
     var map = document.getElementById('map');
     var rect = map.getBoundingClientRect();
-    var x = event.clientX - rect.left - 5; // Nokta merkezini ayarlamak için 5px çıkarıyoruz
-    var y = event.clientY - rect.top - 5;
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
 
     dot.style.left = x + 'px';
     dot.style.top = y + 'px';
 
     map.appendChild(dot);
 
-    // Nokta için not ekleme
     var note = document.createElement('div');
     note.className = 'note';
     note.innerHTML = message;
     dot.appendChild(note);
 
-    // Açıklama ve zamanlayıcı panelini güncelle
     var infoPanel = document.getElementById('markers');
     var markerItem = document.createElement('li');
-    markerItem.innerHTML = message;
+    markerItem.innerHTML = `${message} <br> Başlama zamanı: ${clickTime}`;
     infoPanel.appendChild(markerItem);
 
-    // Zamanlayıcı başlatma (örneğin 3 saat)
-    var countdown = 3 * 60 * 60; // 3 saat
+    var countdown = Math.floor((endTime - new Date()) / 1000);
     var timerDisplay = document.createElement('span');
     timerDisplay.innerText = ' - ' + formatTime(countdown);
     markerItem.appendChild(timerDisplay);
@@ -38,30 +49,26 @@ function addMarker(event) {
 
         if (countdown < 0) {
             clearInterval(timerInterval);
-            dot.style.display = 'none'; // İşaretçiyi gizleme
-            markerItem.remove(); // Açıklama ve zamanlayıcıyı kaldırma
+            dot.style.display = 'none';
+            markerItem.remove();
         } else {
             timerDisplay.innerText = ' - ' + formatTime(countdown);
         }
     }, 1000);
 
-    // Noktaya tıklandığında notu gösterme
     dot.addEventListener('click', function() {
         alert(message);
     });
 
-    // Açıklama kısmına mouse ile gelindiğinde sarı kare oluştur
     markerItem.addEventListener('mouseover', function() {
         dot.classList.add('highlight');
     });
 
-    // Açıklama kısmından mouse çekildiğinde sarı kareyi kaldır
     markerItem.addEventListener('mouseout', function() {
         dot.classList.remove('highlight');
     });
 }
 
-// Tüm işaretlemeleri kaldırma işlevi
 function removeAllMarkers() {
     var map = document.getElementById('map');
     var markers = map.getElementsByClassName('dot');
@@ -70,10 +77,9 @@ function removeAllMarkers() {
     }
 
     var infoPanel = document.getElementById('markers');
-    infoPanel.innerHTML = ''; // Açıklama ve zamanlayıcıları temizle
+    infoPanel.innerHTML = '';
 }
 
-// Son işareti kaldırma işlevi
 function removeLastMarker() {
     var map = document.getElementById('map');
     var markers = map.getElementsByClassName('dot');
@@ -84,17 +90,13 @@ function removeLastMarker() {
     var infoPanel = document.getElementById('markers');
     var lastMarker = infoPanel.lastChild;
     if (lastMarker) {
-        lastMarker.remove(); // Açıklama ve zamanlayıcıyı kaldır
+        lastMarker.remove();
     }
 }
 
-// Zaman biçimini formatlama işlevi
 function formatTime(seconds) {
     var hours = Math.floor(seconds / 3600);
     var minutes = Math.floor((seconds % 3600) / 60);
     var secs = seconds % 60;
     return hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + secs.toString().padStart(2, '0');
 }
-
-// Haritaya tıklama olayını dinleme
-document.getElementById('map').addEventListener('click', addMarker);
