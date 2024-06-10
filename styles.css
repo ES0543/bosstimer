@@ -1,8 +1,9 @@
+/* Harita stilini buraya ekleyin */
 #map {
     position: relative;
     width: 800px;
     height: 800px;
-    background-image: url('https://i.ibb.co/3r7L1LT/Screenshot-3.png');
+    background-image: url('https://i.ibb.co/3r7L1LT/Screenshot-3.png'); /* Harita görüntüsünün URL'si */
     background-size: cover;
     border: 1px solid black;
 }
@@ -11,9 +12,9 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: red;
-    border-radius: 50%;
-    pointer-events: none;
+    background-color: red; /* Nokta rengi */
+    border-radius: 50%; /* Yuvarlak şekil */
+    pointer-events: none; /* Nokta tıklanabilir olmasın */
 }
 
 .note {
@@ -22,37 +23,37 @@
     left: -20px;
     font-size: 15px;
     color: black;
-    font-weight: bold;
+    font-weight: bold; /* Yazıyı kalınlaştırma */
     white-space: nowrap;
-    pointer-events: none;
-    margin-left: 10px;
+    pointer-events: none; /* Not tıklanabilir olmasın */
+    margin-left: 10px; /* Yeni margin-left eklendi */
 }
 
 #info-panel {
     position: absolute;
     top: 60px;
-    left: 850px;
-    padding: 10px;
+    left: 850px; /* Yeni left değeri */
+    padding: 10px; /* Yeni padding eklendi */
 }
 
 #message {
-    margin-top: 10px;
-    width: calc(100% - 5px);
+    margin-top: 10px; /* Point düğmesinden sonra boşluk bırakır */
+    width: calc(100% - 5px); /* panelin içindeki genişlik */
 }
 
 button {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    display: block; /* Point düğmesi ve diğer düğmeleri alt alta göster */
+    margin-top: 10px; /* Her düğme arasında boşluk bırakır */
+    margin-bottom: 10px; /* Düğmelerin alt kısmına boşluk bırakır */
 }
 
 #sidebar {
     position: absolute;
-    top: 250px;
-    left: 850px;
-    width: 250px;
+    top: 250px; /* Boss & Timer yazısından sonra yer alır */
+    left: 850px; /* Yeni left değeri */
+    width: 250px; /* Sidebar genişliği */
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 10px; /* Yeni margin-left eklendi */
     border: 1px solid #ccc;
 }
 
@@ -61,10 +62,11 @@ button {
 }
 
 .highlight {
-    outline: 2px solid blue;
+    outline: 2px solid yellow;
 }
 
+/* Dark mode stilleri */
 body {
-    background-color: #121212;
-    color: #FFFFFF;
+    background-color: #121212; /* Karanlık arka plan rengi */
+    color: #FFFFFF; /* Beyaz metin rengi */
 }
