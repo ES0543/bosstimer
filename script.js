@@ -49,12 +49,14 @@ function addMarker(event, endTime, clickTime) {
 
         if (countdown < 0) {
             clearInterval(timerInterval);
-            dot.style.display = 'none';
-            markerItem.remove();
+            dot.style.backgroundColor = 'blue'; // Marker'ı maviye dönüştür
+            timerDisplay.innerText = ' - 00:00:00'; // Geri sayımı durdur ve sıfırda bırak
         } else {
             timerDisplay.innerText = ' - ' + formatTime(countdown);
         }
     }, 1000);
+
+    addRemoveButton(markerItem, dot, timerInterval);
 
     dot.addEventListener('click', function() {
         alert(message);
@@ -67,6 +69,17 @@ function addMarker(event, endTime, clickTime) {
     markerItem.addEventListener('mouseout', function() {
         dot.classList.remove('highlight');
     });
+}
+
+function addRemoveButton(markerItem, dot, timerInterval) {
+    var removeButton = document.createElement('button');
+    removeButton.innerText = 'Kaldır';
+    removeButton.addEventListener('click', function() {
+        clearInterval(timerInterval);
+        markerItem.remove();
+        dot.remove(); // Marker'ı haritadan da kaldır
+    });
+    markerItem.appendChild(removeButton);
 }
 
 function removeAllMarkers() {
