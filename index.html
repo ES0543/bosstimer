@@ -1,20 +1,20 @@
 <html lang="en">
 <head>
-  <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"></script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NightCrows BF Timers</title>
-<link rel="stylesheet" href="styles-dark.css"> <!-- Dark mode CSS dosyası -->
+<link rel="stylesheet" href="styles.css">
+<script src="firebase/firebase-app.js"></script>
+<script src="firebase/firebase-firestore.js"></script>
+
 </head>
 <body>
-<h1>NightCrows BF Timers</h1>
+<h1>NightCrows BF Timers for BlackGuard and BlackFox</h1>
 
 <div id="map"></div>
 
 <div id="info-panel">
-    <textarea id="message" placeholder="Which boss text here"></textarea>
+    <textarea id="message" placeholder="Which boss write here"></textarea>
     <button onclick="addMarker()">Point</button>
     <button onclick="removeAllMarkers()">Remove All Makers</button>
     <button onclick="removeLastMarker()">Remove Last Maker</button>
@@ -27,27 +27,4 @@
 
 <script src="script.js"></script>
 </body>
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAZoVTonJU6t4Z_ih5yG8t2Rv5B9PW6xGM",
-    authDomain: "bosstimer-d5faf.firebaseapp.com",
-    projectId: "bosstimer-d5faf",
-    storageBucket: "bosstimer-d5faf.appspot.com",
-    messagingSenderId: "650333902048",
-    appId: "1:650333902048:web:2b9811cdf9dc6bd160ec85",
-    measurementId: "G-5XVTW7LTFD"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </html>
