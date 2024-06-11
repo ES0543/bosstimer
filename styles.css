@@ -47,14 +47,18 @@ button {
     margin-bottom: 10px; /* Düğmelerin alt kısmına boşluk bırakır */
 }
 
+
 #sidebar {
     position: absolute;
     top: 250px; /* Boss & Timer yazısından sonra yer alır */
     left: 850px; /* Yeni left değeri */
-    width: 950px; /* Sidebar genişliği */
+    width: 500px; /* Sidebar genişliği */
+    height: 400px; /* Sidebar yüksekliği */
     padding: 10px;
     margin-left: 10px; /* Yeni margin-left eklendi */
     border: 1px solid #ccc;
+    overflow: auto; /* Hem yatay hem de dikey kaydırma ekler */
+    font-size: 14px; /* Sidebar içindeki yazıların büyüklüğünü ayarlar */
 }
 
 #sidebar h2 {
